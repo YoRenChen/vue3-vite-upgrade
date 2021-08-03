@@ -47,6 +47,16 @@ import.meta.env.NODE_ENV === 'production'
 # vite 使用相对路径
 @import '../../../node_modules/ant-design-vue/es/style/themes/default.less';
 ```
+### 忽略第三方插件
+```
+# webpack
+const plugins = [
+  new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+]
+
+# vite
+optimizeDeps.exclude
+```
 ## vite 兼容 vue2.0
 ## Vite 基本特性
 [Vite 文档](https://cn.vitejs.dev/guide/why.html#slow-server-start)
