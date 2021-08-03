@@ -39,7 +39,14 @@ process.env.NODE_ENV === 'production'
 # vite
 import.meta.env.NODE_ENV === 'production'
 ```
-### 
+### 引用源码资源
+```
+# webapck
+@import '~ant-design-vue/es/style/themes/default.less';
+
+# vite 使用相对路径
+@import '../../../node_modules/ant-design-vue/es/style/themes/default.less';
+```
 ## vite 兼容 vue2.0
 ## Vite 基本特性
 [Vite 文档](https://cn.vitejs.dev/guide/why.html#slow-server-start)
