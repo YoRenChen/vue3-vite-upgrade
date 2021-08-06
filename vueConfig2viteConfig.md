@@ -57,6 +57,33 @@ const plugins = [
 # vite
 optimizeDeps.exclude
 ```
+### Vue 使用SVG chainWebpack: config.module.rule('svg')
+```
+# Webpack
+chainWebpack: (config) => {
+  const svgRule = config.module.rule('svg')
+  svgRule.uses.clear()
+  svgRule
+    .oneOf('inline')
+    .resourceQuery(/inline/)
+    .use('vue-svg-icon-loader')
+    .loader('vue-svg-icon-loader')
+    .end()
+    .end()
+    .oneOf('external')
+    .use('file-loader')
+    .loader('file-loader')
+    .options({
+      name: 'assets/[name].[hash:8].[ext]'
+    })
+  config.plugin('define').tap((args) => {
+    Object.assign(args[0]['process.env'], {
+      VUE_APP_GITHASH: JSON.stringify(GitRevision.commithash().substr(0, 7))
+    })
+    return args
+  })
+},
+```
 ## vite 兼容 vue2.0
 ## Vite 基本特性
 [Vite 文档](https://cn.vitejs.dev/guide/why.html#slow-server-start)
