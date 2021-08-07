@@ -82,7 +82,10 @@ chainWebpack: (config) => {
     })
     return args
   })
-},
+}
+
+# vite
+svg-sprite-loader
 ```
 ## vite 兼容 vue2.0
 ## Vite 基本特性
