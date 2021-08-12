@@ -85,7 +85,7 @@ chainWebpack: (config) => {
 }
 
 # vite
-svg-sprite-loader
+svg-sprite-loader 
 ```
 ## vite 兼容 vue2.0
 ## Vite 基本特性
